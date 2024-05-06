@@ -90,7 +90,7 @@ struct {
     { "debug.",           AID_SYSTEM,   0 },
     { "debug.",           AID_SHELL,    0 },
     { "log.",             AID_SHELL,    0 },
-    { "service.adb.root", AID_SHELL,    0 },
+    { "service.adb.root", AID_SYSTEM,   0 },
     { "service.adb.tcp.port", AID_SHELL,    0 },
     { "persist.mmac.", AID_SYSTEM, 0 },
     { "persist.sys.",     AID_SYSTEM,   0 },
@@ -102,6 +102,10 @@ struct {
     { "wc_transport.",     AID_BLUETOOTH,   AID_SYSTEM },
     { "net.pdp",          AID_RADIO,    AID_RADIO },
     { "service.bootanim.exit", AID_GRAPHICS, 0 },
+#ifdef MTK_HARDWARE
+    { "nvram_init",      AID_NVRAM,   0 },
+    { "gps.",            AID_GPS,     AID_SYSTEM },
+#endif
 #ifdef PROPERTY_PERMS_APPEND
 PROPERTY_PERMS_APPEND
 #endif
